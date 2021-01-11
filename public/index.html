@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pictionary</title>
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <link href="/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="chat">
+      <div id="window">
+        <div id="output">
+        </div>
+      </div>
+      <input id="handle" type="text" placeholder="Handle"/>
+      <input id="message" type="text" placeholder="Message"/>
+      <button id="send">Send</button>
+    </div>
+
+    <canvas id="canvas" width="700" height="700" style="border:2px solid black"></canvas>
+    <canvas id="canvasOutput" width="700" height="700" style="border:2px solid black"></canvas>
+      <div>
+          <button onclick="javascript:clearArea();return false;">Clear Area</button>
+            Line width : <select id="selWidth">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="9" selected="selected">9</option>
+            <option value="11">11</option>
+            </select>
+            Color : <select id="selColor">
+            <option value="black">black</option>
+            <option value="blue" selected="selected">blue</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="yellow">yellow</option>
+            <option value="gray">gray</option>
+            </select>
+    <script src="/chat.js">
+    </script>
+  </body>
+</html>
