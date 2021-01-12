@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Kieran Jolly",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "mongoose": "^5.11.11",
     "socket.io": "^3.0.5"
   },
   "devDependencies": {
