@@ -41,13 +41,19 @@ io.on('connection',function(socket){
   console.log(data);
   io.emit('chat', data);
 })
+
+
   socket.on('drawing',function(data){
   //console.log('made it here');
   io.emit('drawing',data);
 })
+
+
   socket.on('clear',function(){
     io.emit('clear');
   })
+
+
   socket.on('beep',function(data){
   console.log('made it here');
   var id = data.id;
@@ -88,4 +94,6 @@ io.on('connection',function(socket){
     })
   console.log(data);
   })
+
+
 })

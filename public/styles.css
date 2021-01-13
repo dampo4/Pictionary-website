@@ -1,19 +1,27 @@
 #header{
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   justify-content: space-around;
   align-items: center;
 }
-
+h1{
+  font-size: 50px;
+}
 #content{
   display: flex;
+  margin: 20px;
   justify-content: space-around;
 }
 canvas{
   background: #ffffff;
 }
 body{
-  background-color: #32a852;
+  background-color: #09a2e3;
+}
+p{
+
+  font-family: Nunito;
+  font-size: 20px;
 }
 input{
     padding: 10px 20px;
