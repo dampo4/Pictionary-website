@@ -10,23 +10,31 @@
     <link href="/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="chat">
-      <div id="window">
-        <div id="output">
+    <div id="header">
+
+        <div>
+          <input id="name1" type="text" placeholder="name"/>
+          <input id="password" type="text" placeholder="password"/>
+          <button id="createAccount">Create</button>
+        </div>
+        <div>
+          <h1>Draw & Chat</h1>
+        </div>
+        <div>
+          <input id="loginName" type="text" placeholder="name"/>
+          <input id="loginPassword" type="text" placeholder="password"/>
+          <button id="login">Login</button>
         </div>
       </div>
+      <div id="content">
+        <div>
+      <textarea id="output" rows="4" cols="50"></textarea>
       <input id="handle" type="text" value="Login First" readonly="true"/>
       <input id="message" type="text" placeholder="Message"/>
       <button id="send">Send</button>
-    </div>
-    <input id="name1" type="text" placeholder="name"/>
-    <input id="password" type="text" placeholder="password"/>
-    <button id="createAccount">Create</button>
-    <input id="loginName" type="text" placeholder="name"/>
-    <input id="loginPassword" type="text" placeholder="password"/>
-    <button id="login">Login</button>
-    <canvas id="canvas" width="700" height="700" style="border:2px solid black"></canvas>
-    <canvas id="canvasOutput" width="700" height="700" style="border:2px solid black"></canvas>
+        </div>
+  <div>
+    <canvas id="canvas" width="700" height="500" style="border:2px solid black"></canvas>
       <div>
           <button onclick="javascript:clearArea();return false;">Clear Area</button>
             Line width : <select id="selWidth">
@@ -45,6 +53,13 @@
             <option value="yellow">yellow</option>
             <option value="gray">gray</option>
             </select>
+          </div>
+        </div>
+
+    <div>
+      <canvas id="canvasOutput" width="700" height="500" style="border:2px solid black"></canvas>
+    </div>
+  </div>
     <script src="/chat.js"></script>
     <script src="/drawing.js"></script>
     <script src="/account_create.js"></script>

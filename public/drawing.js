@@ -6,6 +6,8 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 var ctx2 = canvasOutput.getContext('2d');
 
+
+
 window.addEventListener('load', ()=>{
     console.log("hello");
     document.addEventListener('mousedown', startPainting);
@@ -34,7 +36,7 @@ function stopPainting(){
 function sketch(event){
   if (!paint) return;
   ctx.beginPath();
-  ctx.lineWidth = 5;
+  ctx.lineWidth = $('#selWidth').val();
   ctx.lineCap = 'round';
   ctx.strokeStyle = $('#selColor').val();
   ctx.moveTo(coord.x, coord.y);
@@ -44,6 +46,7 @@ function sketch(event){
   socket.emit('drawing', canvas.toDataURL())
 }
 function clearArea() {
+  socket.emit('clear');
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
@@ -52,4 +55,8 @@ socket.on('drawing',function(data){
   img.onload = function(){
       ctx2.drawImage(img, 0,0, img.width, img.height);
   }
+});
+socket.on('clear',function(){
+  ctx2.setTransform(1, 0, 0, 1, 0, 0);
+  ctx2.clearRect(0, 0, ctx2.canvas.width, ctx2.canvas.height);
 });
